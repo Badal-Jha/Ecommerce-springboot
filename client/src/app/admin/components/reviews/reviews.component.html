@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Review ID</th>
+        <th>Review</th>
+        <th>Username</th>
+        <th>Product ID</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviews">
+        <td>{{ review.reviewId }}</td>
+        <td>{{ review.review }}</td>
+        <td>{{ review.username }}</td>
+        <td>{{ review.productCode }}</td>
+        <td >
+          <button class="btn btn-success approve" (click)="approveReview(review)" *ngIf="!review.approved">Approve</button>
+          <button class="btn btn-danger" (click)="rejectReview(review)" *ngIf="!review.approved">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

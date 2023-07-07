@@ -1,0 +1,18 @@
+.card-text{
+    font-weight: bold;
+}
+.card-body{
+    background-color: rgb(36, 37, 44);
+    cursor: pointer;
+}
+.card{
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+.review-form{
+    margin-bottom: 10px;
+}
+.col-auto{
+    margin-top: 23px;
+}
+  

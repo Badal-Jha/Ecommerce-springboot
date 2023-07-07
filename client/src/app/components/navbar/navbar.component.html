@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <h1 class="logo"><span class="logo-first">S</span>hoppify</h1>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        
+        <ul class="navbar-nav flex-column flex-lg-row" *ngIf="loggedIn!='true'">
+          <li class="nav-item item">
+            <a  href="/login">Login </a>
+          </li>
+          <li class="nav-item">
+            <a  href="/register">Signup</a>
+          </li>
+        </ul>
+        <p *ngIf="loggedIn=='true'" style="color: white; font-weight: bolder;margin-right:20px ;">{{username}}</p>
+        <button type="button" class="btn btn-danger" *ngIf="loggedIn=='true'"  (click)="logout()">Log Out</button>
+
+      </div>
+    </div>
+  </nav>
+  

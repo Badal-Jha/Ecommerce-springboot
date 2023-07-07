@@ -1,0 +1,23 @@
+
+.card {
+    width:100%;
+    margin-top: 20px;
+  }
+  
+  .product-img {
+    height: 200px;
+   
+    object-fit: contain;
+  }
+
+.card-body{
+    background-color:white; 
+    
+}
+
+.card-title,.card-price{
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: bold;
+
+}

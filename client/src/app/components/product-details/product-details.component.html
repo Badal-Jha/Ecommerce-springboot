@@ -1,0 +1,60 @@
+<div class="container" style="color: white;">
+
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-fluid" [src]="product.imgUrl" alt="Product Image">
+       
+      </div>
+      <div class="col-md-6">
+        <h2 style="font-weight: bolder;">{{ product.productBrand }}</h2>
+        <p>{{product.productDesc}}</p>
+            <p class="card-text">Product Code: {{product.productCode}}</p>
+            <p class="card-text">{{ product.productName }}</p>
+            <p class="card-text">Rs. {{product.price}}</p>
+        <!-- Add other product details here -->
+        <div>
+            <h3>Reviews</h3>
+           
+            <form class="row review-form" #reviewForm="ngForm" (ngSubmit)="onSubmitReview(reviewForm)">
+              <div class="col">
+                <div class="form-group">
+                  <label for="inputReview">Enter Review for this product</label>
+                  <input type="text" [(ngModel)]="review" name="review" class="form-control" id="inputReview" placeholder="Enter Review for this product">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="inputRating">Rating</label>
+                  <select class="form-control" id="inputRating" name="rating" [(ngModel)]="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </form>
+            
+          
+             
+              
+              
+            
+            <div class="card" *ngFor="let review of product.reviews" >
+             
+                <div class="card-body" *ngIf="review.approved">
+                  <p class="card-text">{{review.review}}</p>
+            
+                  <p class="card-text"> {{review.username}}, {{review.date}}</p>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+   
+  </div>
+  

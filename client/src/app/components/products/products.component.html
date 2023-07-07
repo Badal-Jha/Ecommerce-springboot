@@ -1,0 +1,44 @@
+
+<div class="container">
+    <form class="row" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="col">
+            <div class="input-group mb-3">
+              <input [(ngModel)]="searchCriteria.productCode" type="text" class="form-control" name="productCode" placeholder="Search by product code">
+            </div>
+          </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <input [(ngModel)]="searchCriteria.brand" type="text" class="form-control" name="brand" placeholder="Search by brand">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <input [(ngModel)]="searchCriteria.productName" type="text" class="form-control" name="productName" placeholder="Search by product name">
+        </div>
+      </div>
+      
+      <div class="col">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+    <button class="btn btn-success" type="submit" *ngIf="role=='ROLE_ADMIN'"><a href="/admin/reviews" style="color:white;text-decoration: none;">Approve Reviews</a></button>
+    <button class="btn btn-success" type="submit" *ngIf="role=='ROLE_ADMIN'" style="margin-left: 5px;"><a href="/admin/add" style="color:white;text-decoration: none;">add products</a></button>
+  </div>
+  
+ 
+<div class="container" style="cursor: pointer;" >
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
+      <div class="col" *ngFor="let product of products">
+        <div class="card card-size" (click)="openProductDetails(product)" *ngIf="product" else elseBlock>
+          <img class="card-img-top product-img" [src]="product.imgUrl" alt="Product Image">
+          <div class="card-body">
+            <h3 class="card-title">{{ product.productBrand }}</h3>
+            <p class="card-text">{{ product.productName }}</p>
+            <p class="card-price">Rs. {{product.price}}</p>
+          </div>
+        </div>
+        <h3 *ngIf="!product" style="color: rgb(255, 255, 255);">No Product Found</h3>
+      </div>
+    </div>
+  </div>
+  

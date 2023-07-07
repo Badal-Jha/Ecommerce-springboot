@@ -1,0 +1,16 @@
+.logo{
+    font-weight: bolder;
+    color: white;
+}
+
+a{
+    color: white;
+    
+}
+.item{
+    margin-right: 5px;
+}
+.logo-first{
+    color: #4aed88;
+    font-size: larger;
+}
